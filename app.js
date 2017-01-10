@@ -73,7 +73,7 @@ login({email: process.env.EMAIL, password: process.env.PASSWORD}, function callb
         }
         var senderid=message.senderID;
         var tid=message.threadID;
-        var txt=message.body;
+        var txt=message.body.toLowerCase();
         console.log(txt);
         var u = db.get('users').find({"id" : senderid});
         if(!u){
