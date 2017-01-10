@@ -94,7 +94,7 @@ login({email: process.env.EMAIL, password: process.env.PASSWORD}, function callb
                     var uid = 0;
                     if(params[0]){
                         if(params[0] == 'me') uid = senderid;
-                        var person = params.join(' ');
+                        var person = params.join(' ');  
                         uid = db.get('users').find({"name" : person});
                         if(!uid){
                             uid=-1;
