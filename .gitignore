@@ -1,2 +1,5 @@
 node_modules
 db.json
+data.json
+old/db.json
+old/data.json
