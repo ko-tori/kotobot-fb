@@ -91,8 +91,9 @@ login({email: process.env.EMAIL, password: process.env.PASSWORD}, function callb
                 }
                 else if(cmd=="talk"){
                     var mes = '...';
-                    var uid = senderid;
+                    var uid = 0;
                     if(params[0]){
+                        if(params[0] == 'me') uid = senderid;
                         var person = params.join(' ');
                         uid = db.get('users').find({"name" : person});
                         if(!uid){
@@ -164,7 +165,7 @@ login({email: process.env.EMAIL, password: process.env.PASSWORD}, function callb
                     prev=v;
                 });
             }
-            if(false){//Math.random()>.95){
+            if(Math.random()>.95){
                 var blah = generateMessage(tid,0);
                 console.log("Saying: "+blah);
                 api.sendMessage(blah,tid);
